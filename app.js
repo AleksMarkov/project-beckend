@@ -22,19 +22,17 @@ app.use((err, req, res, next) => {
   res.status(status).json({ message });
 });
 
-console.log(process.env);
-
-// mongoose
-//   .connect(DB_HOST)
-//   .then(() => {
-//     app.listen(3000, () => {
-//       console.log("Server is running. Use our API on port: 3000");
-//     });
-//     console.log("Database connection successful");
-//   })
-//   .catch((error) => {
-//     console.log(error.message);
-//     process.exit(1);
-//   });
+mongoose
+  .connect(process.env.DB_HOST)
+  .then(() => {
+    app.listen(3000, () => {
+      console.log("Server is running. Use our API on port: 3000");
+    });
+    console.log("Database connection successful");
+  })
+  .catch((error) => {
+    console.log(error.message);
+    process.exit(1);
+  });
 
 // MongoDB Atlas:Login: Alex, password: Wc0ACo4c6nXgH4AD

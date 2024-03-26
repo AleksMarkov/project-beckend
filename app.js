@@ -34,5 +34,3 @@ mongoose
     console.log(error.message);
     process.exit(1);
   });
-
-// MongoDB Atlas:Login: Alex, password: Wc0ACo4c6nXgH4AD
